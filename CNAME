@@ -1,0 +1,4 @@
+echo "www.mivoaravahy.com" > CNAME
+git add CNAME
+git commit -m "Ajout CNAME"
+git push
