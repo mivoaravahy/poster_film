@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ma Bibliothèque de Films</title>
+  <link rel="manifest" href="app.json">
+  <meta name="theme-color" content="#111">
+  <style>
+    body { background: #111; color: white; font-family: sans-serif; margin: 0; }
+    h1 { text-align: center; padding: 20px 0; }
+    .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes fixes */
+  gap: 16px;
+  padding: 20px;
+}
+    .card { background: #222; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+    .card img { width: 100%; display: block; }
+    .info { padding: 10px; }
+    .title { font-weight: bold; font-size: 1.1em; }
+    .genre { font-size: 0.9em; color: #aaa; }
+    .description { font-size: 0.9em; color: #ccc; margin-top: 5px; }
+  </style>
+</head>
+<body>
+  <h1>Bibliothèque de MIVOARA</h1>
+   <div style="text-align: center; margin-bottom: 20px;">
+  <input type="text" id="searchInput" placeholder="Rechercher un film..." style="padding: 8px; width: 60%; font-size: 1em;">
+   </div>
+  <div class="grid" id="filmGrid"></div>
+
+  /* <script src="js.js"> */
+   if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('app.js')
+    .then(() => console.log("Service Worker enregistré"))
+    .catch(err => console.error("Erreur Service Worker :", err));
+}
+  </script>
+</body>
+</html>
